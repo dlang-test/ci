@@ -185,7 +185,7 @@ node { // for now whole pipeline runs on one node because no slaves are present
     stage ('Test Compiler') {
         parallel mapSteps(
             [ 'dmd', 'druntime', 'phobos' ],
-            { name -> sh "make -f posix.mak auto-tester-test MODEL=64 --jobs=4" }
+            { name -> sh "make -f posix.mak auto-tester-test MODEL=64" }
         )
     }
 
